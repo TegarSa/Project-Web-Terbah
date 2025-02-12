@@ -823,3 +823,9 @@ body, html {
   }
 }
 
+@media (max-width: 400px){
+  .hero {
+    height: 1300px;
+  }
+}
+
