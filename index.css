@@ -58,6 +58,57 @@ body, html {
   color: white;
 }
 
+.navbar .toggle-btn{
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 2rem;
+  top: 80px;
+  height: 0;
+  width: 430px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  overflow: hidden;
+  display: none;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown-menu.open {
+  height: 170px;
+}
+
+.dropdown-menu li{
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-menu li a {
+  color: white;
+  list-style: none;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .navbar .toggle-btn {
+    display: block;
+  }
+
+  .navbar .nav-items {
+    display: none;
+  }
+
+  .dropdown-menu {
+    display: block;
+  }
+}
 
 /* Hero Section */
 .hero {
@@ -219,81 +270,6 @@ body, html {
   transform: scale(1.05);
 }
 
-
-/* Navbar Burger Menu */
-@media (max-width: 768px) {
-  .navbar .container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .navbar .logo {
-    margin-left: 0;
-    margin-bottom: 20px;
-  }
-
-  .navbar .nav-items {
-    display: none; 
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    background-color: #333;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    padding: 20px;
-    gap: 15px;
-    z-index: 5;
-  }
-
-  .navbar .nav-items li a {
-    font-size: 18px;
-    color: white;
-    padding: 10px;
-    width: 100%;
-    text-align: left;
-  }
-
-  .navbar .nav-items li a:hover {
-    background-color: rgb(83, 153, 224);
-  }
-
-  .navbar .burger {
-    display: block;
-    margin-top: 100px;
-    z-index: 11;
-    cursor: pointer;
-  }
-
-  .burger div {
-    width: 30px;
-    height: 3px;
-    background-color: white;
-    margin: 5px 0;
-    transition: 0.3s;
-  }
-
-  /* Toggle burger menu */
-  .navbar.active .nav-items {
-    display: flex;
-  }
-
-  .navbar.active .burger div:nth-child(1) {
-    transform: rotate(45deg);
-    position: relative;
-    top: 8px;
-  }
-
-  .navbar.active .burger div:nth-child(2) {
-    opacity: 0;
-  }
-
-  .navbar.active .burger div:nth-child(3) {
-    transform: rotate(-45deg);
-    position: relative;
-    top: -8px;
-  }
-}
 
 /* Keunggulan Section */
 .advantages {
@@ -813,20 +789,37 @@ body, html {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .about-container {
+  .about-us {
     flex-direction: column;
   }
   
   .about-image {
-    min-height: 250px;
+    height: 550px;
+    width: 350px;
   }
 
   .about-content h2 {
     font-size: 28px;
+    text-align: center;
   }
 
   .about-content p {
     font-size: 16px;
+  }
+
+  .hero {
+    height: 1000px;
+  }
+
+  .hero-content {
+    margin: -20px;
+    padding: 0;
+    margin-left: 5px;
+  }
+
+  .hero-content h1 {
+    text-align: center;
+
   }
 }
 

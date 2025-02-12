@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Berita</title>
   <link rel="stylesheet" href="blog.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
 </head>
 <body>
@@ -19,7 +20,17 @@
           <li><a href="#footer">Contact</a></li>
         </ul>
       </nav>
-    </div>
+          <div class="toggle-btn">
+            <i class="fa-solid fa-bars"></i>
+          </div>      
+      </div>
+
+      <div class="dropdown-menu">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./blog.html">Blog</a></li>
+          <li><a href="#footer">Contact</a></li>
+      </div>
   </header> 
 
     <header class="about-hero">
@@ -190,6 +201,19 @@
         });
     });
     });
+
+    const toggleBtn = document.querySelector('.toggle-btn')
+      const toggleBtnIcon = document.querySelector('.toggle-btn i')
+      const dropDownMenu = document.querySelector('.dropdown-menu')
+
+      toggleBtn.onclick = function () {
+        dropDownMenu.classList.toggle('open')
+        const isOpen = dropDownMenu.classList.contains('open')
+
+        toggleBtnIcon.classList = isOpen
+        ? 'fa-solid fa-x'
+        : 'fa-solid fa-bars'
+      }
   </script>
 </body>
 </html>

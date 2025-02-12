@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Beranda</title>
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
 </head>
   <body>
@@ -19,6 +20,16 @@
           <li><a href="#footer">Contact</a></li>
           </ul>
       </nav>
+      <div class="toggle-btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>      
+      </div>
+
+      <div class="dropdown-menu">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="#footer">Contact</a></li>
       </div>
   </header> 
 
@@ -241,13 +252,18 @@
     
       setInterval(changeImage, 5000);
 
-    const burger = document.querySelector('.burger');
-    const navbar = document.querySelector('.navbar');
+      const toggleBtn = document.querySelector('.toggle-btn')
+      const toggleBtnIcon = document.querySelector('.toggle-btn i')
+      const dropDownMenu = document.querySelector('.dropdown-menu')
 
-    burger.addEventListener('click', () => {
-      navbar.classList.toggle('active');
-    });
+      toggleBtn.onclick = function () {
+        dropDownMenu.classList.toggle('open')
+        const isOpen = dropDownMenu.classList.contains('open')
 
+        toggleBtnIcon.classList = isOpen
+        ? 'fa-solid fa-x'
+        : 'fa-solid fa-bars'
+      }
     </script>  
   </body>
 </html>
